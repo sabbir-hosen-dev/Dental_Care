@@ -8,7 +8,7 @@ const tmData = [
     name: "Sabbir Hosen",
     description:
       "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-    image:"https://i.postimg.cc/TP4shGtk/people1.png",
+    image:"https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/people1.png",
     town: "Tangail",
   },
   {
@@ -16,7 +16,7 @@ const tmData = [
     name: "Sani",
     description:
       "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-    image: "https://i.postimg.cc/TP4shGtk/people2.png",
+    image: "https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/people2.png",
     town: "Tangail",
   },
   {
@@ -24,7 +24,7 @@ const tmData = [
     name: "Aslam",
     description:
       "It is a long established fact that by the readable content of a lot layout. The point of using Lorem a more-or-less normal distribu to using Content here, content",
-    image: "https://i.postimg.cc/TP4shGtk/people3.png",
+    image: "https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/people3.png",
     town: "Tangail",
   },
 ];

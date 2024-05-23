@@ -4,21 +4,21 @@ import "./Service.css";
 const serviceData = [
   {
     id: 804,
-    img: require("https://i.postimg.cc/CLTWjhSX/fluoride.png"),
+    img: "https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/cavity.png",
     title: "Fluoride Treatment",
     describetion:
       "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the",
   },
   {
     id: 874,
-    img: require("https://i.postimg.cc/05m45TDf/cavity.png"),
+    img:"https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/fluoride.png",
     title: "Cavity Filling",
     describetion:
       "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the",
   },
   {
     id: 8834,
-    img: require("https://i.postimg.cc/vTRSLhFf/whitening.png"),
+    img: "https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/whitening.png",
     title: "Teeth Whitening",
     describetion:
       "Lorem Ipsum is simply dummy printing and typesetting indust Ipsum has been the",

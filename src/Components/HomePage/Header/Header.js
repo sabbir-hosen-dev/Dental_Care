@@ -13,7 +13,7 @@ function Header() {
 
       <div className="col-2 heder-img">
         <div className="img-wrap">
-          <img src="https://i.postimg.cc/g2ctDr5S/chair.png" alt="" />
+          <img src="https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/chair.png" alt="" />
         </div>
       </div>
     </header>

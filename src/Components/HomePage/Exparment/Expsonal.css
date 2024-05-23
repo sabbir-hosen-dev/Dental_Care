@@ -1,7 +1,6 @@
-
 /* -- appointment -- start */
-.exparment-wrap{
-  background: url(https://i.postimg.cc/k5Bj0z7W/appointment.png);
+.exparment-wrap {
+  background: url(https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/appointment.png);
   background-repeat: no-repeat;
   block-size: cover;
   background-position: center center;
@@ -9,18 +8,18 @@
   margin-top: 10rem;
   margin-bottom: 5rem;
 }
-.exparment{
+.exparment {
   display: flex;
-  gap:5rem;
+  gap: 5rem;
   align-items: center;
 }
-.exparment-img{
+.exparment-img {
   width: 50%;
   display: block;
 }
-.exparment-img::before{
-  content:"";
-  background:url(https://i.postimg.cc/sDYbmk2X/doctor-small.png);
+.exparment-img::before {
+  content: "";
+  background: url(https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/doctor-small.png);
   background-repeat: no-repeat;
   background-size: cover;
   width: 380px;
@@ -29,30 +28,30 @@
   bottom: 0;
   left: 12%;
 }
-.exparment-content{
+.exparment-content {
   width: 50%;
   padding: 2rem 0rem;
 }
-.exparment-content p, .exparment-content h3{
-  color:var(--white)
+.exparment-content p,
+.exparment-content h3 {
+  color: var(--white);
 }
-.exparment-content p{
-  margin:2rem 0rem;
+.exparment-content p {
+  margin: 2rem 0rem;
 }
 /* -- appointment -- end */
 
-
 @media screen and (max-width: 700px) {
-  .exparment-img{
+  .exparment-img {
     display: none;
   }
 }
 
 @media screen and (max-width: 900px) {
- .exparment-img{
+  .exparment-img {
     display: none;
   }
-  .exparment-content{
+  .exparment-content {
     width: 100%;
   }
 }

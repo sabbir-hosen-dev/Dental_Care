@@ -6,7 +6,7 @@ function Treatment() {
     <section className="wrap">
  <section className="treatment wrap">
       <div className="treatment-img">
-        <img src="https://i.postimg.cc/rsSZh4Mb/treatment.png" alt="" />
+        <img src="https://raw.githubusercontent.com/sabbir-hosen-dev/Dental_Care/main/src/assets/images/treatment.png" alt="" />
       </div>
       <div className="treatment-content">
         <h1>Exceptional Dental Care, on Your Terms</h1>
