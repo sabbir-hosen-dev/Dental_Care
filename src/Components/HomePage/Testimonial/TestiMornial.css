@@ -1,0 +1,44 @@
+/* --  testimonial -- start */
+.testimornial-top{
+  display: flex;
+  justify-content: space-between;
+}
+.quote{
+  width: 15rem;
+  height: 15rem;
+  color:#e2f8f9;
+}
+.tm-col{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 5rem 0rem;;
+}
+.tm-row{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 3px 3px 14px -5px var(--dark);
+  padding: 4rem;
+  border-radius: 1rem;
+}
+.tm-info-wrap{
+  display: flex;
+  gap:2rem;
+  align-items: center;
+}
+.tm-logo{
+  width: 60px;
+  height: 60px;
+  border: 3px solid var(--secondary);
+  border-radius: 50%;
+}
+/* --  testimonial -- end */
+
+
+@media screen and (max-width: 700px) {
+  .quote{
+    display: none;
+  }
+
+}

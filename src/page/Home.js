@@ -1,13 +1,13 @@
 import React from "react";
-import Navber from "../Components/Navber/Navber";
-import Header from "../Components/Header/Header";
-import Info from "../Components/Info/Info";
-import Services from "../Components/Services/Services";
-import Treatment from "../Components/Treatment/Treatment";
-import Appointment from "../Components/Appointment/Appointment";
-import Testimonial from "../Components/Testimonial/Testimonial";
-import Contact from "../Components/Contact/Contact";
-import Footer from "../Components/Footer/Footer";
+import Header from "../Components/HomePage/Header/Header";
+import Info from "../Components/HomePage/Info/Info";
+import Services from "../Components/HomePage/Services/Services";
+import Treatment from "../Components/HomePage/Treatment/Treatment";
+import Testimonial from "../Components/HomePage/Testimonial/Testimonial";
+import Exparment from "../Components/HomePage/Exparment/Exparment";
+import Footer from "../Components/Sheard/Footer/Footer";
+import Navber from "../Components/Sheard/Navber/Navber";
+import Contact from "../Components/HomePage/Contact/Contact";
 
 function Home() {
   return (
@@ -19,28 +19,12 @@ function Home() {
           <Info />
         </div>
       </div>
-      <div className="wrap">
-        <Services />
-        <Treatment />
-      </div>
-      <div className="appointment-wrap">
-        <div className="wrap">
-          <Appointment />
-        </div>
-      </div>
-      <div className="wrap">
-       <Testimonial />
-      </div>
-      <div className="contact-wrap">
-        <div className="wrap">
-        <Contact />
-        </div>
-      </div>
-      <div className="footer-wrap">
-        <div className="wrap">
-          <Footer />
-        </div>
-      </div>
+      <Services />
+      <Treatment />
+      <Exparment />
+      <Testimonial />
+      <Contact />
+      <Footer />
     </>
   );
 }

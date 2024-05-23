@@ -1,0 +1,41 @@
+/* --- info start ---  */
+
+.info {
+  background-color: var(--primary);
+  padding: 2.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.info:nth-child(2) {
+  background: var(--dark);
+}
+.info-icon {
+  display: flex;
+  justify-content: center;
+}
+.icon {
+  color: var(--white);
+  font-size: 5.6rem;
+  text-align: center;
+}
+
+.info-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+.info-desc p,
+.info-desc h5 {
+  color: var(--white);
+}
+/* --- info end ---  */
+
+
+@media screen and (max-width: 700px) {
+  .info {
+    flex-direction: column;
+  }
+}

@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Heaser.css"
 
 function Header() {
   return (
@@ -12,7 +13,7 @@ function Header() {
 
       <div className="col-2 heder-img">
         <div className="img-wrap">
-          <img src={require("../../assets/images/chair.png")} alt="" />
+          <img src="https://i.postimg.cc/g2ctDr5S/chair.png" alt="" />
         </div>
       </div>
     </header>

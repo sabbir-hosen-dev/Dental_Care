@@ -1,0 +1,20 @@
+/* --- header start --  */
+header {
+  min-height: 550px;
+  align-items: center;
+  margin: 5rem 0rem;
+}
+header p {
+  margin: 2rem 0px;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+@media screen and (max-width: 700px) {
+  .header-content {
+    order: 2;
+  }
+}

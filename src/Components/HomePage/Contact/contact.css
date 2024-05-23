@@ -1,0 +1,45 @@
+/* -- contact --- start */
+.contact-wrap{
+  background: url(https://i.postimg.cc/k5Bj0z7W/appointment.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.c-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:5rem 0rem;
+}
+.c-top{
+  text-align: center;
+}
+.c-top h3{
+  color:var(--white);
+  margin-bottom: 3rem;
+}
+.contact{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:3rem;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+}
+input , textarea{
+  width: 350px;
+  padding:.8rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 1.6rem;
+}
+form .inline-block{
+  display: inline-block!important;
+}
+.btn-wrap{
+  display: flex;
+  justify-content: center;
+}
+/* -- contact --- end */

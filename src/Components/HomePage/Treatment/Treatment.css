@@ -1,0 +1,27 @@
+
+/* -- treatment -- start */
+.treatment{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px,1fr));
+  gap:5rem;
+  align-items: center;
+  padding: 4rem;
+}
+.treatment-img{
+  margin: 4rem;
+}
+.treatment-content p {
+  margin:3rem 0rem;
+}
+/* -- treatment -- end */
+@media screen and (max-width: 900px) {
+  .treatment-img img{
+    width: 100%;
+    border-radius: 1rem;
+    max-height: 400px;
+  }
+  .treatment-img{
+    margin:0;
+  }
+
+}

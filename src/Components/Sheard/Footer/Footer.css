@@ -1,0 +1,30 @@
+/* -- Footer -- start */
+.footer-wrap{
+  background: url(https://i.postimg.cc/mD15HqqT/footer.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.f-top{
+  display: flex;
+  justify-content: center;
+  padding:5rem 0rem;
+  flex-wrap: wrap;
+  gap:5rem;
+  width: 100%;
+}
+.f-top ul{
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.f-top ul li {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.f-bottom{
+  padding:3rem;
+  text-align: center;
+}
+/* -- Footer -- end */

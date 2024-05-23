@@ -1,10 +1,12 @@
 import React from "react";
+import "./Treatment.css"
 
 function Treatment() {
   return (
-    <section className="treatment wrap">
+    <section className="wrap">
+ <section className="treatment wrap">
       <div className="treatment-img">
-        <img src={require("../../assets/images/treatment.png")} alt="" />
+        <img src="https://i.postimg.cc/rsSZh4Mb/treatment.png" alt="" />
       </div>
       <div className="treatment-content">
         <h1>Exceptional Dental Care, on Your Terms</h1>
@@ -20,6 +22,8 @@ function Treatment() {
         <button className="btn bg-primary">GET STARTED</button>
       </div>
     </section>
+    </section>
+   
   );
 }
 

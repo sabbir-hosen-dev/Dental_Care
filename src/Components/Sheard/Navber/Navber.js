@@ -8,6 +8,7 @@ function Navber() {
       <ul>
         <NavLink to="/" className='link'>Home</NavLink>
         <NavLink to="/about" className='link'>About</NavLink>
+        <NavLink to="/appoinment" className='link'>Appointment</NavLink>
         <NavLink to="/reviews" className='link'>Reviews</NavLink>
         <NavLink to="/contact" className='link'>Contact Us</NavLink>
         <NavLink to="/login" className='link'>Login</NavLink> 
