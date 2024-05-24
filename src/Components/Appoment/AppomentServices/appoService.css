@@ -1,0 +1,27 @@
+.apoHeader{
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.apoHeader h4{
+  color:var(--primary);
+  margin-bottom: 1rem;
+}
+.apoServiceCard{
+background: var(--white);
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 1px 1px 26px -20px var(--dark) ;
+  cursor: pointer;
+  transition: .3s ease;
+  text-align: center;
+}
+.apoServiceCard:hover{
+  transform: translateY(-1px);
+}
+
+.apoServiceCard h4{
+  color: var(--primary);
+}
+.apoServiceCard  p{
+  margin: 1.5rem  0rem;
+}

@@ -1,0 +1,36 @@
+.modal-form input {
+  border: 1px solid #ddd;
+}
+.mordal {
+  /* border-radius:30px; */
+}
+.mordal-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.mordal-top button {
+  border: none;
+  border-radius: 50%;
+  background: var(--dark);
+  color:var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  padding:4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition:.3s ease;
+}
+.mordal-top button:hover{
+  background: red;
+}
+.close-modal{
+  font-size: 10px;
+}
+.modal-p{
+  margin-bottom: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  padding:10px 20px;
+}

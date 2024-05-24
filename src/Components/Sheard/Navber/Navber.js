@@ -1,5 +1,6 @@
 import React from 'react'
-import {  NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom';
+import "./Navber.css"
 
 function Navber() {
   return (
@@ -7,7 +8,6 @@ function Navber() {
       <h2 className="d">Dental_Care</h2>
       <ul>
         <NavLink to="/" className='link'>Home</NavLink>
-        <NavLink to="/about" className='link'>About</NavLink>
         <NavLink to="/appoinment" className='link'>Appointment</NavLink>
         <NavLink to="/reviews" className='link'>Reviews</NavLink>
         <NavLink to="/contact" className='link'>Contact Us</NavLink>

@@ -106,7 +106,12 @@ img {
   gap: 50px;
 }
 .col-2 {
-  flex: 1 1 356px;
+  flex: 1 1 400px;
+}
+.grid-3{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
 }
 /* --home --  */
 .home-wrap {
@@ -117,43 +122,66 @@ img {
   min-height: 100vh;
 }
 
-/* ---nav ber css start ---  */
-.nav-wrap {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: center;
-  padding-top: 2rem;
-}
-.nav-wrap ul {
-  display: flex;
-  gap: 4rem;
-}
-.nav-wrap ul .link {
-  padding: 10px 12px;
-  border-radius: 5px;
-  transition: 0.3s ease;
-  font-weight: bold;
-}
-.active {
-  background: var(--dark);
-  color: var(--white);
-}
-.margin {
-  margin: 9rem 0rem;
-}
-.h5 {
-  color: var(--primary);
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-/* ---navber css end --  */
-
-
 /* --- header end --  */
 
+/* -- login page start -- */
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 
+.login-wrap{
+  border: 2px solid #ddd;
+  padding:20px;
+  border-radius:10px;
+  text-align: center;
+}
+.login h4{
+  margin-bottom: 30px;
+}
+.login-form .input{
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+.login-form .input label{
+  font-size: 14px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+.login-wrap small{
+  font-size: 11px;
+  margin-top:3px;
+}
+.login-form .input input{
+  border: 1px solid #ddd;
+}
+.login-wrap p{
+  padding:15px 0px;
+}
+.bg-none{
+  background: transparent;
+  color:var(--dark);
+  border: 1px solid #ddd;;
+  display: block;
+  width: 100%;
+  transform:all .3s ease;
+}
+.bg-none:hover{
+  background: var(--dark);
+  color:#fff;
+}
+.forget{
+  cursor: pointer;
+  color: var(--primary);
+}
+.login-wrap .link{
+  margin-top:2px;
+  font-size: 14px;
+}
+/* -- login page end  -- */
 
 
 

@@ -3,18 +3,15 @@
   border: none;
   box-shadow: 1px 1px 8px -5px var(--dark);
   font-size: 1.6rem;
-}
-.react-calendar__tile--active  {
-  box-sizing: border-box;
-  border-radius: 50%;
+  border-radius: 1rem;
 }
 .react-calendar__tile {
   max-width: 100%;
   padding: 13px 8.6667px;
-  background: none;
   text-align: center;
   line-height: 16px;
   font: inherit;
   font-size: 0.833em;
   font-weight: bold;
+  border-radius: 1rem;
 }

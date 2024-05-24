@@ -7,7 +7,9 @@ function Info() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://dental-care-server-4bes44nw0-sabbir-hosens-projects.vercel.app//getInfoData")
+    fetch(
+      "http://localhost:5003/getInfoData"
+    )
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
@@ -24,7 +26,7 @@ function Info() {
         setIsLoading(false);
         setError(err.message);
       });
-  }, []);
+  }, [infodata]);
 
   return (
     <section className="info-wrap">
