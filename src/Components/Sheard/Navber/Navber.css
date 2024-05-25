@@ -5,10 +5,15 @@
   flex-wrap: wrap;
   align-items: center;
   padding-top: 2rem;
+  height: 60px;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 .nav-wrap ul {
   display: flex;
   gap: 4rem;
+
+  transition: .3s ease;
 }
 .nav-wrap ul .link {
   padding: 10px 12px;
@@ -28,5 +33,50 @@
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
-
+.menu , .navClose{
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .3s ease;
+  z-index: 10;
+  display: none;
+}
+.navClose{
+  display: block;
+}
 /* ---navber css end --  */
+
+@media screen and (max-width:800px) {
+  .menu{
+    display: block;
+  }
+  .nav-wrap ul {
+    position: absolute;
+    background-color: #07070729;
+    right: 0;
+    width: 30%;
+    flex-direction: column;
+    justify-content: center;
+    padding:0px 20px;
+    max-height: 100vh;
+    top:0;
+    bottom: 0;
+  }
+  .navActive{
+    opacity: 1;
+  }
+  .navNotActive{
+    opacity: 0;
+  }
+  .display{
+    display: block;
+  }
+  .displayNone{
+    display: none;
+  }
+  .close{
+    z-index:100;
+    font-size:22px;
+    cursor: pointer;
+  }
+}

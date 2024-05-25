@@ -1,0 +1,45 @@
+.dasbord{
+  background:#f1f5f9;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+.dashBordWrap{
+  display: flex;
+}
+.sidebr{
+  width: 250px;
+  padding-top: 10px;
+  display:block;
+  background-color: #fff;
+  height: calc(100vh - 70px);
+  padding:20px;
+}
+.bord{
+  padding: 15px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.calendarBtn-wrap{
+  display: flex;
+  justify-content: end;
+  position: relative;
+  right: 0;
+}
+.clendrbtn{
+  justify-self: end;
+  display: inline-block;
+  background: transparent;
+    color: var(--dark);
+    border: 1px solid #ddd;
+    display: block;
+    transform: all .3s ease;
+}
+.clendrbtn:hover{
+  background: var(--dark);
+  color:#fff;
+}
+.calendar-wrap{
+  position:absolute;
+  top:50px;
+}

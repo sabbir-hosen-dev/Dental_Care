@@ -25,12 +25,30 @@
 .mordal-top button:hover{
   background: red;
 }
+
+select{
+  width: 100%;
+  padding: .8rem 1.5rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  border: 1px solid #ddd;
+}
 .close-modal{
   font-size: 10px;
+}
+.modal-form input{
+  width: 100%;
 }
 .modal-p{
   margin-bottom: 20px;
   background: #ddd;
   border-radius: 10px;
   padding:10px 20px;
+}
+.btom-form{
+  display: flex;
+  gap:4rem;
+}
+.ReactModal__Content{
+  border-radius: 12px;
 }

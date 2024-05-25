@@ -21,8 +21,10 @@ function Morderl(props) {
     name: "",
     email: "",
     phone: "",
+    gender: "Mele",
+    age: "",
   });
-  const { mordal, setMordal,service} = props.mordal;
+  const { mordal, setMordal, service } = props.mordal;
 
   function closeModal() {
     setMordal(false);
@@ -35,12 +37,29 @@ function Morderl(props) {
       [name]: value,
     });
   };
+  console.log(service,data)
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const DATA = { ...service, ...data };
+    fetch("http://localhost:5003/addAppoment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(DATA),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          setMordal(false);
+          alert("Thanks For Appoment")
+        }
+      })
+      .catch((err) => console.log(err));
   };
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  
+  const options = { year: "numeric", month: "long", day: "numeric" };
+
   return (
     <div className="modal">
       <Modal
@@ -55,7 +74,9 @@ function Morderl(props) {
             <AiOutlineClose className="close-modal" />
           </button>
         </div>
-        <p className="modal-p">{service.date && service.date.toLocaleDateString('en-US', options)}</p>
+        <p className="modal-p">
+          {service.date && service.date.toLocaleDateString("en-US", options)}
+        </p>
         <p className="modal-p">{service.time}</p>
         <form className="modal-form" onSubmit={handleSubmit}>
           <input
@@ -82,8 +103,15 @@ function Morderl(props) {
             placeholder="Email"
             required
           />
+          <div className="btom-form">
+            <select name="gender" id="gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <input type="number" name="age" id="age" placeholder="Age" />
+          </div>
           <button className="btn " type="submit">
-            the modal
+            Submit
           </button>
         </form>
       </Modal>
