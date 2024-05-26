@@ -6,7 +6,7 @@ import AppomentServices from "../Components/Appoment/AppomentServices/ServicesAp
 import Morderl from "../Components/Appoment/Mordel/Morderl";
 
 function Appoinment() {
-  const [date, setDate] = useState(null);
+  const [date, setDate] = useState(new Date());
   const [mordal, setMordal] = useState(false);
 
   const [service, setService] = useState({
@@ -14,15 +14,18 @@ function Appoinment() {
     time: "",
     date: "",
   });
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  const formetDate = date.toLocaleDateString("en-US", options);
 
   const handleService = (data) => {
     setService({
       ...service,
       title: data.title,
       time:data.time,
-      date:date
+      date: formetDate 
     });
     setMordal(true)
+
   };
 
 

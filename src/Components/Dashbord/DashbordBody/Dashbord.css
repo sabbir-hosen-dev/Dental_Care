@@ -8,12 +8,22 @@
 }
 .sidebr{
   width: 250px;
-  padding-top: 10px;
-  display:block;
   background-color: #fff;
-  height: calc(100vh - 70px);
-  padding:20px;
+  height: calc(100vh - 60px);
+  display:flex;
+  flex-direction: column;
 }
+.sidebrLink{
+  padding:12px 20px;
+  font-size: 13px;
+  font-weight: bold;
+
+}
+.sidebr .active{
+  background: #f1f5f9;
+  color:var(--dark)
+}
+
 .bord{
   padding: 15px;
   width: 100%;

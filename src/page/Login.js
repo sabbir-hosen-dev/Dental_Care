@@ -1,16 +1,33 @@
 import { signInWithPopup } from "firebase/auth";
 import React from "react";
-import { Link } from "react-router-dom";
-import { auth, googleProvider } from "../Firebase/Firbase";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { auth, googleProvider, mongoDbaddUser } from "../Firebase/Firbase";
+import useDoctorContex from "./../Hook/useDoctorContext";
 
 function Login() {
+  const { user, setUser } = useDoctorContex();
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const handleClick = () => {
-    signInWithPopup(auth,googleProvider)
-    // .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
-  }
+    signInWithPopup(auth, googleProvider)
+      .then((data) => {
+        const userData = {
+          name: data.user.displayName,
+          email: data.user.email,
+          image: data.user.photoURL,
+          login: true,
+        };
+        setUser({
+          ...user,
+          ...userData,
+        });
+        mongoDbaddUser(userData);
+        navigate(location.state.form);
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <div className="login">
       <div className="login-wrap">
@@ -40,7 +57,9 @@ function Login() {
 
         <p>Or</p>
 
-        <button onClick={handleClick} className="btn bg-none">CONTINUE WITH GOOGLE</button>
+        <button onClick={handleClick} className="btn bg-none">
+          CONTINUE WITH GOOGLE
+        </button>
       </div>
     </div>
   );

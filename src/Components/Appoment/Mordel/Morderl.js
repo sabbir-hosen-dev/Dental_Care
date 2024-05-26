@@ -37,11 +37,11 @@ function Morderl(props) {
       [name]: value,
     });
   };
-  console.log(service,data)
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const DATA = { ...service, ...data };
+    console.log(DATA.date)
     fetch("http://localhost:5003/addAppoment", {
       method: "POST",
       headers: {
@@ -58,7 +58,7 @@ function Morderl(props) {
       })
       .catch((err) => console.log(err));
   };
-  const options = { year: "numeric", month: "long", day: "numeric" };
+
 
   return (
     <div className="modal">
@@ -75,7 +75,7 @@ function Morderl(props) {
           </button>
         </div>
         <p className="modal-p">
-          {service.date && service.date.toLocaleDateString("en-US", options)}
+          {service.date && service.date}
         </p>
         <p className="modal-p">{service.time}</p>
         <form className="modal-form" onSubmit={handleSubmit}>
@@ -104,11 +104,11 @@ function Morderl(props) {
             required
           />
           <div className="btom-form">
-            <select name="gender" id="gender">
+            <select required name="gender" id="gender">
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-            <input type="number" name="age" id="age" placeholder="Age" />
+            <input type="number" name="age" id="age" onChange={handleChange} required placeholder="Age" />
           </div>
           <button className="btn " type="submit">
             Submit

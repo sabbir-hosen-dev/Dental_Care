@@ -1,17 +1,23 @@
 import React from "react";
 import "./Dashbord.css";
-import { Link, Outlet} from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 function DashbordBody() {
   return (
     <div className="dashBordWrap">
       <div className="sidebr">
-        <Link to="/dashbord/appoments">
-          <h4>My Appointment</h4>
+        <NavLink className="sidebrLink" to="/dashbord/appoments">
+          My Appointment
+        </NavLink>
+        {/* <Link to="/dashbord/reveiws"><h5>MY Reveiws</h5></Link>
+        <Link to="/dashbord/history"><h5>My History</h5></Link>
+        <Link to="/"><h5>My History</h5></Link> */}
+        <Link className="sidebrLink" to="/">
+          Home
         </Link>
       </div>
       <div className="bord">
-      <Outlet />
+        <Outlet />
       </div>
     </div>
   );

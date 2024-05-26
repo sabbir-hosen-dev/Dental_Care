@@ -1,7 +1,46 @@
-table{
-  margin-top: 20px;
-  width: 100%;
+.calendarBtn-wrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-table tr{
-  
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+thead {
+  background-color: #f5f6fa;
+}
+
+th,
+td {
+  padding: 10px;
+}
+tr:nth-child(even) {
+  background: #cee3ff4e;
+}
+
+.cencle {
+  font-size: 25px;
+  cursor: pointer;
+  color: #17171db7;
+  transition: 0.3s ease;
+  font-weight: bold;
+  padding:2px;
+  border-radius: 5px;
+}
+.cencle:hover {
+  color: #fff;
+  background: red;
+}
+thead th {
+  position: sticky;
+  top: -18px;
+  left: 0;
+  background-color: #d5d1defe;
+  cursor: pointer;
+  text-transform: capitalize;
 }

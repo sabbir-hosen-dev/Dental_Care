@@ -15,17 +15,21 @@ function Appoments() {
   };
 
   useEffect(( ) => {
-    fetch(`http://localhost:5003/getAppoment?date=${date}`)
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    const formetDate = date.toLocaleDateString("en-US", options);
+  
+    fetch(`http://localhost:5003/getAppoment?date=${formetDate }`)
     .then(res => res.json())
     .then(data => {
       setAppoment(data)
     })
     .catch(err => console.log(err))
-  },[date,appoment,setDate])
-
+  },[date])
+  let count = 0;
   return (
     <div>
       <div className="calendarBtn-wrap">
+        <h4>Appointment</h4>
         <button
           className="btn calendarBtn"
           onClick={() => setCalendar(!calendar)}
@@ -52,11 +56,14 @@ function Appoments() {
         <tbody>
           {
             appoment && appoment.map((data,index)=> {
-              const {_id} = data;
+              const {_id,time,title,name} = data;
+              count++;
               return(
                 <tr key={_id}>
-                  <td>{index}</td>
-                  <td>hi</td>
+                  <td>{count}</td>
+                  <td>{name}</td>
+                  <td>{title}</td>
+                  <td>{time}</td>
                 </tr>
               )
             })

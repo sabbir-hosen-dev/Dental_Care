@@ -6,6 +6,7 @@ function Info() {
   const [isLoadding, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
+
   useEffect(() => {
     fetch(
       "http://localhost:5003/getInfoData"

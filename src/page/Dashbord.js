@@ -8,7 +8,7 @@ function Dashbord() {
       <div className="wrap">
         <Navber />
       </div>
-      <div className="dasbord">
+      <div style={{marginTop:"10px"}} className="dasbord">
         <DashbordBody />
       </div>
     </>
