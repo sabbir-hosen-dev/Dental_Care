@@ -18,7 +18,6 @@ export const DoctorContextProvider = ({children}) => {
     user: user,
     setUser: setUser
   }
-  console.log(user)
   return (
     <DoctorContex.Provider value={data}>
       {children}

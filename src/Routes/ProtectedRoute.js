@@ -4,7 +4,6 @@ import useDoctorContex from "../Hook/useDoctorContext";
 
 function ProtectedRoute({ children }) {
   const { user } = useDoctorContex()
-  console.log(user)
   const location = useLocation();
 
   if (!user.login) {

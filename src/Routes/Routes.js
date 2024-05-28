@@ -1,18 +1,18 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Home from "../page/Home";
 import Error from "../page/Error";
-import Appoinment from "../page/Appoinment";
 import Login from "../page/Login";
 import SignUp from "../page/SignUp";
-import Dashbord from "../page/Dashbord";
-import Appoments from "../Components/Dashbord/Appoments/Appoments";
-import AllUser from "../Components/Admin/AllUser/AllUser";
-import AddDoctor from "../Components/Admin/AddDoctor/AddDoctor";
-import Admin from "../page/Admin";
-import ProtectedRoute from "./ProtectedRoute";
-import ManageDoctors from "../Components/Admin/ManageDoctors/ManageDoctors";
-import ManageUser from './../Components/Admin/ManageUser/ManageUser';
+import Dashbord from './../page/Dashbord';
+import Appoments from './../Components/Dashbord/Appoments/Appoments';
+import AllUser from "../Components/Dashbord/AllUser/AllUser";
+import AddDoctor from "../Components/Dashbord/AddDoctor/AddDoctor";
+import ManageUser from "../Components/Dashbord/ManageUser/ManageUser";
+import ManageDoctors from "../Components/Dashbord/ManageDoctors/ManageDoctors";
+import ProtectedRoute from './ProtectedRoute';
+import Appoinment from './../page/Appoinment';
+
 
 function AppRoutes() {
   return (
@@ -30,16 +30,11 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         >
+          <Route
+            path="/dashbord"
+            element={<Navigate to="appoments" replace />}
+          />
           <Route path="appoments" element={<Appoments />} />
-        </Route>
-        <Route
-          path="/admin"
-          element={
-            <ProtectedRoute>
-              <Admin />
-            </ProtectedRoute>
-          }
-        >
           <Route path="alluser" element={<AllUser />} />
           <Route path="adddoctor" element={<AddDoctor />} />
           <Route path="manageuser" element={<ManageUser />} />

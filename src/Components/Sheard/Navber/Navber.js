@@ -12,15 +12,15 @@ function Navber() {
   return (
     <nav className="nav-wrap">
       <h2 className="d">Dental_Care</h2>
-      <ul className={active ? "navNotActive" : "navActive"}>
+      <ul className={active ? "" : "navActive"} onClick={() => setActive(true)}>
         <NavLink to="/" className="link">
           Home
         </NavLink>
         <NavLink to="/appoinment" className="link">
           Appointment
         </NavLink>
-        <NavLink to="/reviews" className="link">
-          Reviews
+        <NavLink to="/dashbord" className="link">
+         DashBord
         </NavLink>
         <NavLink to="/contact" className="link">
           Contact Us

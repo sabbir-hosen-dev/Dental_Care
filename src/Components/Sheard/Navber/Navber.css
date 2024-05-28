@@ -12,7 +12,6 @@
 .nav-wrap ul {
   display: flex;
   gap: 4rem;
-
   transition: .3s ease;
 }
 .nav-wrap ul .link {
@@ -52,6 +51,12 @@
   cursor: pointer;
   text-align: center;
 }
+.navActive{
+  display: flex !important;
+}
+.close{
+  z-index: 60;
+}
 /* ---navber css end --  */
 
 @media screen and (max-width:800px) {
@@ -69,12 +74,8 @@
     max-height: 100vh;
     top:0;
     bottom: 0;
-  }
-  .navActive{
-    opacity: 1;
-  }
-  .navNotActive{
-    opacity: 0;
+    display: none;
+    z-index: 15;
   }
   .display{
     display: block;
@@ -83,7 +84,7 @@
     display: none;
   }
   .close{
-    z-index:100;
+    z-index:99 !important;
     font-size:22px;
     cursor: pointer;
   }

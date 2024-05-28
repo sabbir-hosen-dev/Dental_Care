@@ -1,5 +1,5 @@
-import { signInWithPopup } from "firebase/auth";
-import React from "react";
+import { onAuthStateChanged, signInWithPopup } from "firebase/auth";
+import React, { useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth, googleProvider, mongoDbaddUser } from "../Firebase/Firbase";
 import useDoctorContex from "./../Hook/useDoctorContext";
@@ -28,6 +28,25 @@ function Login() {
       })
       .catch((err) => console.log(err));
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      const userData = {
+        name: user.displayName,
+        email: user.email,
+        image: user.photoURL,
+        login: true,
+      };
+      setUser({
+        ...user,
+        ...userData,
+      });
+      mongoDbaddUser(userData);
+      navigate(location.state.form);
+    });
+    return () => unsubscribe();
+  }, [location.state.form, navigate, setUser]);
+
   return (
     <div className="login">
       <div className="login-wrap">

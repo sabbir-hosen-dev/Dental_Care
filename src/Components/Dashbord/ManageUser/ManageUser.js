@@ -45,8 +45,13 @@ function ManageUser() {
                   <td>{count}</td>
                   <td>{name}</td>
                   <td>{email}</td>
-                  <td onClick={() => handleDelete(_id)}>
-                    <button className="btn bg-primary">delete</button>
+                  <td>
+                    <button
+                      className="btn bg-primary"
+                      onClick={() => handleDelete(_id)}
+                    >
+                      delete
+                    </button>
                   </td>
                 </tr>
               );
