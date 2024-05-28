@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Dashbord.css";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useDoctorContex from "../../../Hook/useDoctorContext";
+import { SiTruenas } from "react-icons/si";
 
 function DashbordBody() {
+  const [isDoctor, setIsDOctor] = useState(false
+
+  );
+  const {user} = useDoctorContex()
+
+  useEffect(() => {
+    fetch(`http://localhost:5003/userRoll?email=${user.email}`)
+    .then(res => res.json())
+    .then(data => {
+      if(data.length > 0){
+        setIsDOctor(SiTruenas)
+      }
+    })
+    .catch(err => console.log(err))
+  },[user])
+
   return (
     <div className="dashBordWrap">
       <div className="sidebr">
@@ -13,18 +31,23 @@ function DashbordBody() {
         <Link to="/dashbord/history"><h5>My History</h5></Link>
         <Link to="/"><h5>My History</h5></Link> */}
 
-        <NavLink className="sidebrLink" to="/dashbord/alluser">
-          All User
-        </NavLink>
-        <NavLink className="sidebrLink" to="/dashbord/manageuser">
-          Manage User
-        </NavLink>
-        <NavLink className="sidebrLink" to="/dashbord/adddoctor">
-          Add a Doctor
-        </NavLink>
-        <NavLink className="sidebrLink" to="/dashbord/managedoctors">
-          Manage Doctors
-        </NavLink>
+        {isDoctor && (
+          <>
+            <NavLink className="sidebrLink" to="/dashbord/alluser">
+              All User
+            </NavLink>
+            <NavLink className="sidebrLink" to="/dashbord/manageuser">
+              Manage User
+            </NavLink>
+            <NavLink className="sidebrLink" to="/dashbord/adddoctor">
+              Add a Doctor
+            </NavLink>
+            <NavLink className="sidebrLink" to="/dashbord/managedoctors">
+              Manage Doctors
+            </NavLink>
+          </>
+        )}
+
         <Link className="sidebrLink" to="/">
           Home
         </Link>

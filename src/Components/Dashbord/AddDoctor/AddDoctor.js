@@ -1,19 +1,21 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./AddDoctor.css";
 
 function AddDoctor() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    speciality:"Teeth-Orthodontics",
+    speciality: "Teeth-Orthodontics",
   });
-  const data = new FormData();
+
+  const [fileData, setFileData] = useState(null);
+  const fileInputRef = useRef(null);
+
 
   const handleFileChange = (e) => {
-    const selectFile = e.target.files[0]
-    
-    console.log(selectFile)
-  }
+    const selectedFile = e.target.files[0];
+    setFileData(selectedFile);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,7 +24,29 @@ function AddDoctor() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    const formFileDataSend = new FormData();
+    formFileDataSend.append("myFile" , fileData)
+    formFileDataSend.append("name", formData.name);
+    formFileDataSend.append("email", formData.email);
+    formFileDataSend.append("speciality", formData.speciality);
+    fetch("http://localhost:5003/addadoctor", {
+      method: "POST",
+      body: formFileDataSend,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if(data){
+          setFormData({
+            name: "",
+            email: "",
+            speciality: "Teeth-Orthodontics",
+          })
+          fileInputRef.current.value = "";
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   return (
     <form action="" className="addDoctor" onSubmit={handleSubmit}>
@@ -34,6 +58,7 @@ function AddDoctor() {
           id="name"
           onChange={handleChange}
           required
+          value={formData.name}
         />
       </div>
       <div className="input">
@@ -44,6 +69,7 @@ function AddDoctor() {
           id="email"
           onChange={handleChange}
           required
+          value={formData.email}
         />
       </div>
       <div className="input">
@@ -53,6 +79,7 @@ function AddDoctor() {
           onChange={handleChange}
           name="specialty"
           id="specialty"
+          value={formData.speciality}
         >
           <option value="Teeth-Orthodontics">Teeth Orthodontics</option>
           <option value="Cavity-Protaction">Cavity-Protaction</option>
@@ -67,6 +94,7 @@ function AddDoctor() {
           name="file"
           id="file inline-block"
           onChange={handleFileChange}
+          ref={fileInputRef}
           required
         />
       </div>

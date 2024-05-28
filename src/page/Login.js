@@ -60,7 +60,12 @@ function Login() {
             <label htmlFor="password" className="pass">
               Password
             </label>
-            <input type="password" name="password" id="passwork" required />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              required
+            />
             <small className="forget">Forget Password</small>
           </div>
           <button type="submit" className="btn bg-primary">

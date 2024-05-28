@@ -9,11 +9,11 @@ export const DoctorContextProvider = ({children}) => {
     name:"",
     email:"",
     image:"",
-    login:false
+    login:false,
   })
 
   const data = {
-    name: "",
+    name:"",
     login:"",
     user: user,
     setUser: setUser
