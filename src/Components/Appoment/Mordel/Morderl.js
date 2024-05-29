@@ -37,12 +37,13 @@ function Morderl(props) {
       [name]: value,
     });
   };
+  const [isButtonDisabled, setButtonDisabled] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const DATA = { ...service, ...data };
-    console.log(DATA.date)
-    fetch("http://localhost:5003/addAppoment", {
+    setButtonDisabled(true)
+    fetch("https://dental-care-server-xirg.onrender.com/addAppoment", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,12 +54,12 @@ function Morderl(props) {
       .then((data) => {
         if (data.acknowledged) {
           setMordal(false);
-          alert("Thanks For Appoment")
+          setButtonDisabled(false)
+          alert("Thanks For Appoment");
         }
       })
       .catch((err) => console.log(err));
   };
-
 
   return (
     <div className="modal">
@@ -74,9 +75,7 @@ function Morderl(props) {
             <AiOutlineClose className="close-modal" />
           </button>
         </div>
-        <p className="modal-p">
-          {service.date && service.date}
-        </p>
+        <p className="modal-p">{service.date && service.date}</p>
         <p className="modal-p">{service.time}</p>
         <form className="modal-form" onSubmit={handleSubmit}>
           <input
@@ -108,9 +107,16 @@ function Morderl(props) {
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-            <input type="number" name="age" id="age" onChange={handleChange} required placeholder="Age" />
+            <input
+              type="number"
+              name="age"
+              id="age"
+              onChange={handleChange}
+              required
+              placeholder="Age"
+            />
           </div>
-          <button className="btn " type="submit">
+          <button disabled={isButtonDisabled} className="btn " type="submit">
             Submit
           </button>
         </form>

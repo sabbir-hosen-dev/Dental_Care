@@ -5,21 +5,21 @@ import useDoctorContex from "../../../Hook/useDoctorContext";
 import { SiTruenas } from "react-icons/si";
 
 function DashbordBody() {
-  const [isDoctor, setIsDOctor] = useState(false
-
-  );
-  const {user} = useDoctorContex()
+  const [isDoctor, setIsDOctor] = useState(false);
+  const { user } = useDoctorContex();
 
   useEffect(() => {
-    fetch(`http://localhost:5003/userRoll?email=${user.email}`)
-    .then(res => res.json())
-    .then(data => {
-      if(data.length > 0){
-        setIsDOctor(SiTruenas)
-      }
-    })
-    .catch(err => console.log(err))
-  },[user])
+    fetch(
+      `https://dental-care-server-xirg.onrender.com/userRoll?email=${user.email}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length > 0) {
+          setIsDOctor(SiTruenas);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, [user]);
 
   return (
     <div className="dashBordWrap">

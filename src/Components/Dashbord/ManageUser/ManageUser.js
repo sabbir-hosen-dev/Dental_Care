@@ -5,14 +5,14 @@ function ManageUser() {
   const [users, setUsers] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5003/getAllUsers")
+    fetch("https://dental-care-server-xirg.onrender.com/getAllUsers")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.log(err));
   }, [users, setUsers]);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5003/deleteUser?id=${id}`, {
+    fetch(`https://dental-care-server-xirg.onrender.com/deleteUser?id=${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

@@ -11,7 +11,6 @@ function AddDoctor() {
   const [fileData, setFileData] = useState(null);
   const fileInputRef = useRef(null);
 
-
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFileData(selectedFile);
@@ -25,22 +24,22 @@ function AddDoctor() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formFileDataSend = new FormData();
-    formFileDataSend.append("myFile" , fileData)
+    formFileDataSend.append("myFile", fileData);
     formFileDataSend.append("name", formData.name);
     formFileDataSend.append("email", formData.email);
     formFileDataSend.append("speciality", formData.speciality);
-    fetch("http://localhost:5003/addadoctor", {
+    fetch("https://dental-care-server-xirg.onrender.com/addadoctor", {
       method: "POST",
       body: formFileDataSend,
     })
       .then((response) => response.json())
       .then((data) => {
-        if(data){
+        if (data) {
           setFormData({
             name: "",
             email: "",
             speciality: "Teeth-Orthodontics",
-          })
+          });
           fileInputRef.current.value = "";
         }
       })

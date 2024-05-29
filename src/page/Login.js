@@ -31,18 +31,20 @@ function Login() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      const userData = {
-        name: user.displayName,
-        email: user.email,
-        image: user.photoURL,
-        login: true,
-      };
-      setUser({
-        ...user,
-        ...userData,
-      });
-      mongoDbaddUser(userData);
-      navigate(location.state.form);
+      if(user){
+        const userData = {
+          name: user.displayName,
+          email: user.email,
+          image: user.photoURL,
+          login: true,
+        };
+        setUser({
+          ...user,
+          ...userData,
+        });
+        mongoDbaddUser(userData);
+        navigate(location.state.form);
+      }
     });
     return () => unsubscribe();
   }, [location.state.form, navigate, setUser]);

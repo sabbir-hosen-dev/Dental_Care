@@ -5,7 +5,7 @@ function ManageDoctors() {
   const [doctors, setDoctors] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:5003/getAllDoctors")
+    fetch("https://dental-care-server-xirg.onrender.com/getAllDoctors")
       .then((res) => res.json())
       .then((data) => setDoctors(data))
       .catch((err) => console.log(err));
@@ -13,9 +13,12 @@ function ManageDoctors() {
   let count = 0;
 
   const handleDelete = (email) => {
-    fetch(`http://localhost:5003/deleteDoctor?email=${email}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://dental-care-server-xirg.onrender.com/deleteDoctor?email=${email}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
@@ -40,14 +43,14 @@ function ManageDoctors() {
           {doctors &&
             doctors.map((data) => {
               count++;
-              const { name, _id,email, img, speciality } = data;
+              const { name, _id, email, img, speciality } = data;
               return (
                 <tr key={_id}>
                   <td>{count}</td>
                   <td>
                     <img
                       className="doctorsImg"
-                      src={`http://localhost:5003/${img}`}
+                      src={`https://dental-care-server-xirg.onrender.com/${img}`}
                       alt=""
                     />
                   </td>

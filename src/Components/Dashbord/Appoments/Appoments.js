@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
-import "./Appoment.css"
+import "./Appoment.css";
 
 function Appoments() {
   const [date, setDate] = useState(new Date());
   const [calendar, setCalendar] = useState(true);
-  const [appoment,setAppoment] = useState(null);
+  const [appoment, setAppoment] = useState(null);
 
   const options = { year: "numeric", month: "long", day: "numeric" };
 
@@ -14,17 +14,19 @@ function Appoments() {
     setCalendar(true);
   };
 
-  useEffect(( ) => {
+  useEffect(() => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     const formetDate = date.toLocaleDateString("en-US", options);
-  
-    fetch(`http://localhost:5003/getAppoment?date=${formetDate }`)
-    .then(res => res.json())
-    .then(data => {
-      setAppoment(data)
-    })
-    .catch(err => console.log(err))
-  },[date])
+
+    fetch(
+      `https://dental-care-server-xirg.onrender.com/getAppoment?date=${formetDate}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setAppoment(data);
+      })
+      .catch((err) => console.log(err));
+  }, [date]);
   let count = 0;
   return (
     <div>
@@ -54,20 +56,19 @@ function Appoments() {
           </tr>
         </thead>
         <tbody>
-          {
-            appoment && appoment.map((data,index)=> {
-              const {_id,time,title,name} = data;
+          {appoment &&
+            appoment.map((data, index) => {
+              const { _id, time, title, name } = data;
               count++;
-              return(
+              return (
                 <tr key={_id}>
                   <td>{count}</td>
                   <td>{name}</td>
                   <td>{title}</td>
                   <td>{time}</td>
                 </tr>
-              )
-            })
-          }
+              );
+            })}
         </tbody>
       </table>
     </div>

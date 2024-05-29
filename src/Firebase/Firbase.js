@@ -8,15 +8,14 @@ export const auth = getAuth(app);
 
 export const googleProvider = new GoogleAuthProvider();
 
-
 export const mongoDbaddUser = (user) => {
-  fetch("http://localhost:5003/addUser",{
-    method : "POST",
-    headers:{
-      "Content-Type" : "application/json"
+  fetch("https://dental-care-server-xirg.onrender.com/addUser", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(user)
+    body: JSON.stringify(user),
   })
-  .then(res => res.json())
-  .catch(err => console.log(err))
-}
+    .then((res) => res.json())
+    .catch((err) => console.log(err));
+};

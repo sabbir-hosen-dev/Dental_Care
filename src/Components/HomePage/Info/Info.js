@@ -6,11 +6,8 @@ function Info() {
   const [isLoadding, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-
   useEffect(() => {
-    fetch(
-      "http://localhost:5003/getInfoData"
-    )
+    fetch("https://dental-care-server-xirg.onrender.com/getInfoData")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
